@@ -1,9 +1,10 @@
-import React, { Component } from 'react'
-import { View, TextInput, Button, AsyncStorage } from 'react-native'
+import React, { Component } from 'react';
+import { View, TextInput, Button, AsyncStorage } from 'react-native';
 import { Container, Header, Left, Body, Right, Icon, Title } from 'native-base';
 import styles from '../../../assets/styles';
+import ValidationComponent from '../../../helper/validations/index';
 
-export default class Login extends Component {
+export default class Login extends ValidationComponent {
     constructor(props) {
         super(props);
         this.state = {
@@ -22,6 +23,10 @@ export default class Login extends Component {
         }
     }
 
+    _register = () => {
+        this.props.navigation.navigate('Register');
+    }
+
     render() {
         const { username, password } = this.state
         return (
@@ -31,7 +36,7 @@ export default class Login extends Component {
                     <Body style={styles.homeBody}>
                         <Title style={{ alignSelf: 'center' }}>Login</Title>
                     </Body>
-                    <Right  style={styles.flexOne} />
+                    <Right style={styles.flexOne} />
                 </Header>
                 <View style={styles.m20}>
                     <TextInput
@@ -48,6 +53,11 @@ export default class Login extends Component {
                     <Button
                         title='Login'
                         onPress={this._login}
+                    />
+                    <View style={{ marginTop: 20 }} />
+                    <Button
+                        title='Register'
+                        onPress={this._register}
                     />
                 </View>
             </Container>
