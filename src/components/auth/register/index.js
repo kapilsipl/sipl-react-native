@@ -5,7 +5,7 @@
  */
 
 import React, { Component } from 'react';
-import { View, Text, TextInput, TouchableHighlight, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableHighlight, StyleSheet, AsyncStorage } from 'react-native';
 import { Container, Header, Left, Body, Right, Icon, Title, Button, Radio, ListItem, Picker, Content, CheckBox } from 'native-base';
 
 import { ValidationComponent } from '../../../helper';
@@ -108,6 +108,8 @@ export default class Register extends ValidationComponent {
 
         } else {
             alert("You are successfully registered!");
+            AsyncStorage.setItem('isLoggedIn', 'true')
+            this.props.navigation.navigate('Home')
         }
     }
 
@@ -115,7 +117,9 @@ export default class Register extends ValidationComponent {
         return (
             <Container>
                 <Header>
-                    <Left style={styles.flexOne} />
+                    <Left style={styles.flexOne} >
+                        <Icon name="arrow-back" style={{color : 'white'}} onPress={() => this.props.navigation.goBack()}/>
+                    </Left>
                     <Body style={styles.body}>
                         <Title style={{ alignSelf: 'center' }}>Register</Title>
                     </Body>
