@@ -8,5 +8,6 @@
  
  For authentication purpose, we have used SwitchNavigator. Please read the official docs for react-navigation for better understanding.
 
-
  Please see the working of registration screen in case you need to add the validations.
+
+ NOTE: Please use multiline commenting throughout the app.
