@@ -25,7 +25,7 @@ export default class Login extends ValidationComponent {
          */
         if (username == 'sipl' && password == 'sipl') {
             AsyncStorage.setItem('isLoggedIn', 'true')
-            this.props.navigation.navigate('Home')
+            this.props.navigation.navigate('AuthLoading')
         } else {
             alert("User Name & password is sipl.");
         }

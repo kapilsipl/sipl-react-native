@@ -109,7 +109,7 @@ export default class Register extends ValidationComponent {
         } else {
             alert("You are successfully registered!");
             AsyncStorage.setItem('isLoggedIn', 'true')
-            this.props.navigation.navigate('Home')
+            this.props.navigation.navigate('AuthLoading')
         }
     }
 
