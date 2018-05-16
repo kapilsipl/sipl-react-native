@@ -1,3 +1,7 @@
+/**
+ * This screen contains tab navigation
+ * Here we have simply used the previous defined screens(Home and Profile)
+ */
 import React from 'react';
 import { TabNavigator, TabBarBottom } from 'react-navigation';
 import { Text } from 'react-native';

@@ -1,14 +1,25 @@
+/**
+ * This is the Drawer component
+ * Anything inside this file will be there in the drawer
+ */
+
 import React, { Component } from 'react';
 import { Image, AsyncStorage } from 'react-native'
 import { List, ListItem, Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base';
 import { NavigationActions } from 'react-navigation';
 
 export default class Drawer extends Component {
-
+    
+    /**
+     * Navigate to tab screen on button press
+     */
     onPress = () => () => {
         this.props.navigation.navigate('TabScreen')
     }
 
+    /**
+     * Clear AsyncStorage and reset & navigate user to the login screen
+     */
     onLogout = () => () => {
         AsyncStorage.clear()
         const resetAction = NavigationActions.reset({
@@ -45,5 +56,4 @@ export default class Drawer extends Component {
             </Container>
         )
     }
-
 }

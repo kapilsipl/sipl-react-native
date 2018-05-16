@@ -5,6 +5,9 @@ import styles from '../../../assets/styles';
 
 class Home extends Component {
 
+    /**
+     * Navigate to profile screen on button press
+     */
     changeScreen = () => {
         this.props.navigation.navigate('Profile');
     }

@@ -1,3 +1,8 @@
+/**
+ * In this file we are going to check whether a user is already logged in or not
+ * Based on that status we will switch to AuthStack or AppStack
+ */
+
 import React from 'react';
 import {
     ActivityIndicator,

@@ -14,14 +14,26 @@ import {
 
 class Profile extends Component {
 
+    /**
+     * Code some necessary actions to be takes as soon as component mounts
+     */
     componentDidMount() {
+        /** Action method called to load the api as soon as the component is mounted */
         this.props.fetchPeopleFromAPI()
     }
 
+    /**
+     * Navigate back to home
+     */
     changeScreen = () => {
         this.props.navigation.goBack();
     }
 
+    /**
+     * keyExtractor required by FlatList
+     * @param {any} item - The item in loop
+     * @param {Number} - the index of the current item
+     */
     keyExtractor = (item, index) => index.toString()
 
     render() {

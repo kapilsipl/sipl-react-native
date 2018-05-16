@@ -1,3 +1,9 @@
+/**
+ * Import all the screens that are going to be used in the app stack
+ * Define them under DrawerNavigator as we want one inside our application
+ * Export AppStack
+ */
+
 import Home from './home';
 import Profile from './profile';
 import DrawerComponent from './drawer';
@@ -16,7 +22,7 @@ const AppStack = DrawerNavigator(
             screen: TabScreen
         }
     }, {
-        contentComponent: DrawerComponent,
+        contentComponent: DrawerComponent, /** This is our custom drawer component */
     }
 );
 

@@ -13,8 +13,16 @@ export default class Login extends ValidationComponent {
         }
     }
 
+    /**
+     * login takes user the app stack by setting isLoggedIn in AsncStorage
+     */
     login = () => {
         const { username, password } = this.state
+        /**
+         * For now simply allowing user to log in if he inputs username and password as 'sipl'
+         * Else showing him alert with the username and password
+         * In practical application login is going to be handled with actions as data will be provided by the api.
+         */
         if (username == 'sipl' && password == 'sipl') {
             AsyncStorage.setItem('isLoggedIn', 'true')
             this.props.navigation.navigate('Home')
@@ -23,6 +31,9 @@ export default class Login extends ValidationComponent {
         }
     }
 
+    /**
+     * navigate user to the Registration screen
+     */
     register = () => {
         this.props.navigation.navigate('Register');
     }
