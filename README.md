@@ -25,7 +25,7 @@
   </li>
 </ul>
 <blockquote>
-  <p>Please see the working of registration screen in case you need to add the validations.</p>
+  <p>Please see the working of registration screen in case you need to add the validations.</p>
 </blockquote>
 <h4>
   <a id="Naming_conventions_and_commenting_style_13"></a>Naming conventions and commenting style.</h4>
