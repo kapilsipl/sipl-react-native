@@ -1,3 +1,10 @@
+/**
+ * This is the one and only styles.js that will be maintained for the project
+ * Any changes to related to the themes can be done here
+ * We can define all the necessary variables like primaryColor, deviceHeight etc in this file
+ * To make our style more clear, we can use module prefixes in style name.
+ */
+
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
