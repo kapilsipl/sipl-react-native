@@ -20,7 +20,7 @@
   </li>
   <li>
     <p>For authentication purpose, we have used
-      <a href="https://reactnavigation.org/docs/en/auth-flow.html">SwitchNavigator</a>. Please read the official docs for
+      <a href="https://reactnavigation.org/docs/en/auth-flow.html">SwitchNavigator</a>. Please read the official docs of
       <a href="https://reactnavigation.org/docs/en/getting-started.html">react-navigation</a> for better understanding.</p>
   </li>
 </ul>
