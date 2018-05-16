@@ -51,7 +51,9 @@
  * @param {string} color2 - The second color, in hexadecimal format.
  * @return {string} The blended color.
  */
-function blend(color1, color2) { ... }
+function blend(color1, color2) { 
+  ...
+}
 
 
 /** assign x a value of 10 */
