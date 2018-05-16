@@ -4,11 +4,12 @@ import { List, ListItem, Container, Header, Content, Card, CardItem, Thumbnail, 
 import { NavigationActions } from 'react-navigation';
 
 export default class Drawer extends Component {
-    _onPress = () => () => {
+
+    onPress = () => () => {
         this.props.navigation.navigate('TabScreen')
     }
 
-    _onLogout = () => () => {
+    onLogout = () => () => {
         AsyncStorage.clear()
         const resetAction = NavigationActions.reset({
             index: 0,
@@ -34,10 +35,10 @@ export default class Drawer extends Component {
                     </Card>
                     <List>
                         <ListItem>
-                        <Text onPress={this._onPress()}>Tab Screen</Text>
+                            <Text onPress={this.onPress()}>Tab Screen</Text>
                         </ListItem>
                         <ListItem>
-                        <Text onPress={this._onLogout()}>Logout</Text>
+                            <Text onPress={this.onLogout()}>Logout</Text>
                         </ListItem>
                     </List>
                 </Content>

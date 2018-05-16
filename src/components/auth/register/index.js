@@ -135,7 +135,7 @@ export default class Register extends ValidationComponent {
                     <TextInput placeholder="Phone Number" onChangeText={this.onInputValueChanged('number')} value={this.state.number} />
                     {this.isFieldInError('number') && <Text style={styles.errorTextStyle}>{this.getErrorsInField('number')}</Text>}
 
-                    <TextInput placeholder="Password" onChangeText={this.onInputValueChanged('password')} value={this.state.password} />
+                    <TextInput secureTextEntry placeholder="Password" onChangeText={this.onInputValueChanged('password')} value={this.state.password} />
                     {this.isFieldInError('password') && <Text style={styles.errorTextStyle}>{this.getErrorsInField('password')}</Text>}
 
                     <Text>Gender:</Text>

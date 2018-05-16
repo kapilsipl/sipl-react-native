@@ -13,7 +13,7 @@ export default class Login extends ValidationComponent {
         }
     }
 
-    _login = () => {
+    login = () => {
         const { username, password } = this.state
         if (username == 'sipl' && password == 'sipl') {
             AsyncStorage.setItem('isLoggedIn', 'true')
@@ -23,7 +23,7 @@ export default class Login extends ValidationComponent {
         }
     }
 
-    _register = () => {
+    register = () => {
         this.props.navigation.navigate('Register');
     }
 
@@ -52,12 +52,12 @@ export default class Login extends ValidationComponent {
                     />
                     <Button
                         title='Login'
-                        onPress={this._login}
+                        onPress={this.login}
                     />
                     <View style={{ marginTop: 20 }} />
                     <Button
                         title='Register'
-                        onPress={this._register}
+                        onPress={this.register}
                     />
                 </View>
             </Container>

@@ -18,11 +18,11 @@ class Profile extends Component {
         this.props.fetchPeopleFromAPI()
     }
 
-    _changeScreen = () => {
+    changeScreen = () => {
         this.props.navigation.goBack();
     }
 
-    _keyExtractor = (item, index) => index.toString()
+    keyExtractor = (item, index) => index.toString()
 
     render() {
         const { isFetching, people } = this.props.people
@@ -34,7 +34,7 @@ class Profile extends Component {
                 </View>
 
                 <View style={styles.textWrap}>
-                    <Text onPress={this._changeScreen}>Click to return back home</Text>
+                    <Text onPress={this.changeScreen}>Click to return back home</Text>
                 </View>
 
                 <ActivityIndicator
@@ -44,7 +44,7 @@ class Profile extends Component {
                     data={people}
                     extraData={this.props}
                     style={styles.myList}
-                    keyExtractor={this._keyExtractor}
+                    keyExtractor={this.keyExtractor}
                     ItemSeparatorComponent={() => (
                         <View style={styles.listSeparator} />
                     )}

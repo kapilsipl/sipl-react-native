@@ -5,7 +5,7 @@ import styles from '../../../assets/styles';
 
 class Home extends Component {
 
-    _changeScreen = () => {
+    changeScreen = () => {
         this.props.navigation.navigate('Profile');
     }
 
@@ -34,7 +34,7 @@ class Home extends Component {
                         </View>
 
                         <View style={styles.textWrap}>
-                            <Text onPress={this._changeScreen} style={styles.link}>Click to change screen</Text>
+                            <Text onPress={this.changeScreen} style={styles.link}>Click to change screen</Text>
                         </View>
 
                         <View style={styles.textWrap}>
