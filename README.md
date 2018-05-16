@@ -127,11 +127,8 @@
 function blend(color1, color2) { 
   ...
 }
-
-
-
+<br />
 /** assign x a value of 10 */
-
 var x = 10;
     
 var x = 10; /** assign x a value of 10 */
