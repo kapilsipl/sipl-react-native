@@ -8,6 +8,7 @@ import React, { Component } from 'react';
 import { View, Text, TextInput, TouchableHighlight, StyleSheet, AsyncStorage } from 'react-native';
 import { Container, Header, Left, Body, Right, Icon, Title, Button, Radio, ListItem, Picker, Content, CheckBox } from 'native-base';
 import { ValidationComponent } from '../../../helper';
+import { HeaderComponent } from '../../common'
 import styles from '../../../assets/styles'
 
 export default class Register extends ValidationComponent {
@@ -120,15 +121,10 @@ export default class Register extends ValidationComponent {
     render() {
         return (
             <Container>
-                <Header>
-                    <Left style={styles.flexOne} >
-                        <Icon name="arrow-back" style={{color : 'white'}} onPress={() => this.props.navigation.goBack()}/>
-                    </Left>
-                    <Body style={styles.body}>
-                        <Title style={{ alignSelf: 'center' }}>Register</Title>
-                    </Body>
-                    <Right style={styles.flexOne} />
-                </Header>
+                <HeaderComponent
+                    title='Register'
+                    leftButton='back'
+                />
                 <Content style={styles.m20}>
                     <TextInput placeholder="Name" onChangeText={this.onInputValueChanged('name')} value={this.state.name} />
                     {this.isFieldInError('name') && <Text style={styles.errorTextStyle}>{this.getErrorsInField('name')}</Text>}

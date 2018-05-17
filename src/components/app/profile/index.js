@@ -16,7 +16,7 @@ class Profile extends Component {
 
     /**
      * @method componentDidMount
-     * @description Code some necessary actions to be takes as soon as component mounts
+     * @description Code some necessary actions to be taken as soon as component mounts
      */
     componentDidMount() {
         /** Action method called to load the api as soon as the component is mounted */

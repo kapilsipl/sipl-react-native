@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { View, TextInput, Button, AsyncStorage } from 'react-native';
 import { Container, Header, Left, Body, Right, Icon, Title } from 'native-base';
 import styles from '../../../assets/styles';
-import ValidationComponent from '../../../helper/validations/index';
+import { ValidationComponent } from '../../../helper';
+import { HeaderComponent } from '../../common'
 
 export default class Login extends ValidationComponent {
     constructor(props) {
@@ -48,13 +49,9 @@ export default class Login extends ValidationComponent {
         const { username, password } = this.state
         return (
             <Container>
-                <Header>
-                    <Left style={styles.flexOne} />
-                    <Body style={styles.homeBody}>
-                        <Title style={{ alignSelf: 'center' }}>Login</Title>
-                    </Body>
-                    <Right style={styles.flexOne} />
-                </Header>
+                <HeaderComponent
+                    title='Login'
+                />
                 <View style={styles.m20}>
                     <TextInput
                         placeholder='Username'

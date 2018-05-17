@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import styles from '../../../assets/styles';
 import { showToast } from '../../../helper'
+import { HeaderComponent } from '../../common'
 
 import {
     View, Text
 } from 'react-native'
 
 import {
-    Container, Header, Title, Content, Button, Icon, Right, Body, Left, Picker, Form
+    Container, Title, Content, Button, Icon, Right, Body, Left, Picker, Form
 } from "native-base";
 
 class Home extends Component {
@@ -35,20 +36,10 @@ class Home extends Component {
     render() {
         return (
             <Container>
-                <Header>
-                    <Left style={styles.flexOne}>
-                        <Button
-                            transparent
-                            onPress={() => this.props.navigation.navigate('DrawerOpen')}
-                        >
-                            <Icon name="ios-menu" />
-                        </Button>
-                    </Left>
-                    <Body style={styles.homeBody}>
-                        <Title>Header</Title>
-                    </Body>
-                    <Right style={styles.flexOne} />
-                </Header>
+                <HeaderComponent
+                    title='My home'
+                    leftButton='menu'
+                />
                 <Content>
                     <View style={styles.container}>
 
