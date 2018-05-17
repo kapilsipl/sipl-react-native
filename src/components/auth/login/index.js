@@ -14,7 +14,8 @@ export default class Login extends ValidationComponent {
     }
 
     /**
-     * login takes user the app stack by setting isLoggedIn in AsncStorage
+     * @method login
+     * @description login takes user the app stack by setting isLoggedIn in AsncStorage
      */
     login = () => {
         const { username, password } = this.state
@@ -32,12 +33,17 @@ export default class Login extends ValidationComponent {
     }
 
     /**
-     * navigate user to the Registration screen
+     * @method register
+     * @description navigate user to the Registration screen
      */
     register = () => {
         this.props.navigation.navigate('Register');
     }
 
+    /**
+     * @method render
+     * @description Renders component
+     */
     render() {
         const { username, password } = this.state
         return (

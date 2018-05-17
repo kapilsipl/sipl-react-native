@@ -11,6 +11,7 @@ import {
     StyleSheet,
     View,
 } from 'react-native';
+import styles from "../assets/styles";
 
 export default class AuthLoadingScreen extends React.Component {
     constructor(props) {
@@ -18,15 +19,23 @@ export default class AuthLoadingScreen extends React.Component {
         this._bootstrapAsync();
     }
 
-    // Fetch the token from storage then navigate to our appropriate place
+    /**
+     * @method _bootstrapAsync
+     * @description Fetch the token from storage then navigate to our appropriate place
+     */
     _bootstrapAsync = async () => {
         const userToken = await AsyncStorage.getItem('isLoggedIn');
-        // This will switch to the App screen or Auth screen and this loading
-        // screen will be unmounted and thrown away.
+        /**
+         * This will switch to the App screen or Auth screen and this loading
+         * screen will be unmounted and thrown away.
+         */
         this.props.navigation.navigate(userToken ? 'App' : 'Auth');
     };
 
-    // Render any loading content that you like here
+    /**
+     * @method render
+     * @description Render any loading content or splash screen that you like here
+     */
     render() {
         return (
             <View style={styles.container}>
@@ -36,11 +45,3 @@ export default class AuthLoadingScreen extends React.Component {
         );
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});

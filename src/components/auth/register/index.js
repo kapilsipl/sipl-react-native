@@ -7,8 +7,8 @@
 import React, { Component } from 'react';
 import { View, Text, TextInput, TouchableHighlight, StyleSheet, AsyncStorage } from 'react-native';
 import { Container, Header, Left, Body, Right, Icon, Title, Button, Radio, ListItem, Picker, Content, CheckBox } from 'native-base';
-
 import { ValidationComponent } from '../../../helper';
+import styles from '../../../assets/styles'
 
 export default class Register extends ValidationComponent {
 
@@ -27,9 +27,9 @@ export default class Register extends ValidationComponent {
         };
     }
 
-    /*
-     * @method: checkValidation
-     * @desc: called to check validations
+    /**
+     * @method checkValidation
+     * @description called to check validations
      */
     checkValidation = () => {
         /* Call ValidationComponent validate method */
@@ -67,25 +67,25 @@ export default class Register extends ValidationComponent {
         this.setState({ error: true });
     }
 
-    /*
-     * @method: onInputValueChanged
-     * @desc: called when input field value changes
+    /**
+     * @method onInputValueChanged
+     * @description called when input field value changes
      */
     onInputValueChanged = (key) => (value) => {
         this.changeValue(key, value);
     }
 
-    /*
-     * @method: onValueChanged
-     * @desc: called
+    /**
+     * @method onValueChanged
+     * @description called
      */
     onValueChanged = (key, value) => () => {
         this.changeValue(key, value);
     }
 
-    /*
-     * @method: changeValue
-     * @desc: called
+    /**
+     * @method changeValue
+     * @description called
      */
     changeValue = (key, value) => {
         const state = this.state;
@@ -97,9 +97,9 @@ export default class Register extends ValidationComponent {
         })
     }
 
-    /*
-     * @method: onPressRegisterButton
-     * @desc: After pressing the register button
+    /**
+     * @method onPressRegisterButton
+     * @description After pressing the register button
      */
     onPressRegisterButton = () => {
         this.setState({ isSubmitted: true });
@@ -113,6 +113,10 @@ export default class Register extends ValidationComponent {
         }
     }
 
+    /**
+     * @method render
+     * @description Renders component
+     */
     render() {
         return (
             <Container>
@@ -187,23 +191,3 @@ export default class Register extends ValidationComponent {
         );
     }
 }
-
-const styles = StyleSheet.create({
-
-    errorTextStyle: {
-        fontSize: 13,
-        marginLeft: 3,
-        color: 'red',
-    },
-    body: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        flex: 1
-    },
-    flexOne: {
-        flex: 1
-    },
-    m20: {
-        margin: 20
-    },
-})

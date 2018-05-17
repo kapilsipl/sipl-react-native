@@ -3,7 +3,8 @@ import { FETCHING_PEOPLE, FETCHING_PEOPLE_SUCCESS, FETCHING_PEOPLE_FAILURE } fro
 import { API } from '../config'
 
 /**
- * get data from dummy api
+ * @method fetchPeopleFromAPI
+ * @description get data from dummy api
  */
 export function fetchPeopleFromAPI() {
     return (dispatch) => {
@@ -19,7 +20,8 @@ export function fetchPeopleFromAPI() {
 }
 
 /**
- * return object containing action type
+ * @method getPeople
+ * @description return object containing action type
  */
 export function getPeople() {
     return {
@@ -28,7 +30,8 @@ export function getPeople() {
 }
 
 /**
- * return object containing action type
+ * @method getPeopleSuccess
+ * @description return object containing action type
  */
 export function getPeopleSuccess(data) {
     return {
@@ -36,7 +39,10 @@ export function getPeopleSuccess(data) {
         data,
     }
 }
-
+/**
+ * @method getPeopleFailure
+ * @description return object containing action type
+ */
 export function getPeopleFailure() {
     return {
         type: FETCHING_PEOPLE_FAILURE

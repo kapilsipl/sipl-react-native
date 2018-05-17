@@ -15,7 +15,8 @@ import {
 class Profile extends Component {
 
     /**
-     * Code some necessary actions to be takes as soon as component mounts
+     * @method componentDidMount
+     * @description Code some necessary actions to be takes as soon as component mounts
      */
     componentDidMount() {
         /** Action method called to load the api as soon as the component is mounted */
@@ -23,19 +24,25 @@ class Profile extends Component {
     }
 
     /**
-     * Navigate back to home
+     * @method changeScreen
+     * @description Navigate back to home
      */
     changeScreen = () => {
         this.props.navigation.goBack();
     }
 
     /**
-     * keyExtractor required by FlatList
+     * @method keyExtractor
+     * @description keyExtractor required by FlatList
      * @param {any} item - The item in loop
      * @param {Number} - the index of the current item
      */
     keyExtractor = (item, index) => index.toString()
 
+    /**
+     * @method render
+     * @description Renders the component
+     */
     render() {
         const { isFetching, people } = this.props.people
         return (
@@ -74,24 +81,39 @@ class Profile extends Component {
                         </View>
                     )}
                 />
-
             </View >
         )
     }
 }
 
+/**
+ * @method mapStateToProps
+ * @description return state to component as props
+ * @param {*} state 
+ */
 function mapStateToProps(state) {
     return {
         people: state.people
     }
 }
 
+/**
+ * @method mapDispatchToProps
+ * @description dispatch actions
+ * @param {*} dispatch 
+ */
 function mapDispatchToProps(dispatch) {
     return {
         fetchPeopleFromAPI: () => dispatch(fetchPeopleFromAPI())
     }
 }
 
+/**
+ * @method connect
+ * @description connect with redux
+ * @param {function} mapStateToProps
+ * @param {function} mapDispatchToProps
+ */
 export default connect(
     mapStateToProps,
     mapDispatchToProps

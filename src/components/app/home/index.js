@@ -1,17 +1,37 @@
 import React, { Component } from 'react'
-import { View, Text } from 'react-native'
-import { Container, Header, Title, Content, Button, Icon, Right, Body, Left, Picker, Form } from "native-base";
 import styles from '../../../assets/styles';
+import { showToast } from '../../../helper'
+
+import {
+    View, Text
+} from 'react-native'
+
+import {
+    Container, Header, Title, Content, Button, Icon, Right, Body, Left, Picker, Form
+} from "native-base";
 
 class Home extends Component {
 
     /**
-     * Navigate to profile screen on button press
+     * @method changeScreen
+     * @description Navigate to profile screen on button press
      */
     changeScreen = () => {
         this.props.navigation.navigate('Profile');
     }
 
+    /**
+     * @method handleToastButton
+     * @description Example for toast
+     */
+    handleToastButton = () => {
+        showToast('Example toast');
+    }
+
+    /**
+     * @method render
+     * @description Renders the component
+     */
     render() {
         return (
             <Container>
@@ -43,9 +63,12 @@ class Home extends Component {
                         <View style={styles.textWrap}>
                             <Text style={styles.para}>
                                 This is a minimal setup for starting react-native application. This setup includes redux, react-redux, redux-thunk, react-navigation and native base. For fetching APIs - axios is used. Profile component is connected to redux.
-                    </Text>
+                        </Text>
                         </View>
                     </View>
+                    <Button onPress={this.handleToastButton}>
+                        <Text>Click to show Toast</Text>
+                    </Button>
                 </Content>
             </Container >
         )

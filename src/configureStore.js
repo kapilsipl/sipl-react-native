@@ -7,7 +7,8 @@ import app from './reducers'
 import thunk from 'redux-thunk'
 
 /**
- * Create store and return it
+ * @method configureStore
+ * @description Create store and return it
  */
 export default function configureStore() {
   let store = createStore(app, applyMiddleware(thunk))

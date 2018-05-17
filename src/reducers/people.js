@@ -8,7 +8,8 @@ const initialState = {
 }
 
 /**
- * Takes previous state and returns the new state
+ * @method peopleReducer
+ * @description Takes previous state and returns the new state
  * @param {*} state 
  * @param {*} action 
  */

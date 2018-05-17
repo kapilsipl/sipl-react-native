@@ -3,12 +3,12 @@
  * Define them under DrawerNavigator as we want one inside our application
  * Export AppStack
  */
-
 import Home from './home';
 import Profile from './profile';
 import DrawerComponent from './drawer';
 import TabScreen from './tab-screen';
 import { DrawerNavigator } from 'react-navigation';
+import { Root } from 'native-base';
 
 const AppStack = DrawerNavigator(
     {
@@ -25,5 +25,4 @@ const AppStack = DrawerNavigator(
         contentComponent: DrawerComponent, /** This is our custom drawer component */
     }
 );
-
 export default AppStack;

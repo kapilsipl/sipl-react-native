@@ -25,8 +25,10 @@ export default TabNavigator(
                 } else if (routeName === 'Settings') {
                     iconName = `ios-options${focused ? '' : '-outline'}`;
                 }
-                // You can return any component that you like here! We usually use an
-                // icon component from react-native-vector-icons
+                /**
+                 * You can return any component that you like here! We usually use an
+                 * icon component from react-native-vector-icons
+                 */
                 return <Icon name= { iconName }/>;
             },
         }),

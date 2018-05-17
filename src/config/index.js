@@ -4,7 +4,6 @@
  * Export the required settings and import them wherever required
  */
 
-
 /** Define base url only once and use it everywhere */
  const BASE_URL = 'https://swapi.co/api';
 

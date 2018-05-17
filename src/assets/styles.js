@@ -60,4 +60,14 @@ export default StyleSheet.create({
     m20: {
         margin: 20
     },
+    body: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        flex: 1
+    },
+    errorTextStyle: {
+        fontSize: 13,
+        marginLeft: 3,
+        color: 'red',
+    }
 })

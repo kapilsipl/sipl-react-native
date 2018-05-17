@@ -8,22 +8,28 @@ import { Image, AsyncStorage } from 'react-native'
 import { List, ListItem, Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base';
 
 export default class Drawer extends Component {
-    
+
     /**
-     * Navigate to tab screen on button press
+     * @method onPress
+     * @description Navigate to tab screen on button press
      */
     onPress = () => () => {
         this.props.navigation.navigate('TabScreen')
     }
 
     /**
-     * Clear AsyncStorage and navigate user to AuthLoading screen
+     * @method onLogout
+     * @description Clear AsyncStorage and navigate user to AuthLoading screen
      */
     onLogout = () => () => {
         AsyncStorage.clear()
         this.props.navigation.navigate('AuthLoading');
     }
 
+    /**
+     * @method render
+     * @description render component
+     */
     render() {
         return (
             <Container>
