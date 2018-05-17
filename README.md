@@ -119,7 +119,8 @@
   </strong>
 </p>
 <pre><code>/**
- * Blend two colors together.
+ * @method blend
+ * @description Blend two colors together.
  * @param {string} color1 - The first color, in hexadecimal format.
  * @param {string} color2 - The second color, in hexadecimal format.
  * @return {string} The blended color.
