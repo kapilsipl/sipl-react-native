@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import { Container, Header, Title, Content, Button, Icon, Right, Body, Left, Picker, Form, List, ListItem } from "native-base";
-import AwesomeAlert from 'react-native-awesome-alerts';
 import styles from '../../../assets/styles';
+import { Confirm } from '../../common'
 
 class ConfirmationScreen extends Component {
 
@@ -53,27 +53,21 @@ class ConfirmationScreen extends Component {
                 </Header>
                 <Content>
                     <View style={styles.confirmContainer}>
-                        <TouchableOpacity onPress={() => {
-                            this.showConfirm();
-                        }}>
+                        <TouchableOpacity
+                            onPress={() => {
+                                this.showConfirm();
+                            }}
+                        >
                             <View style={styles.button}>
                                 <Text style={styles.text}>Delete</Text>
                             </View>
                         </TouchableOpacity>
-
-                        <AwesomeAlert
+                        <Confirm
                             show={showConfirm}
-                            showProgress={false}
                             title="Confirm"
                             message="Do you want to delete this record?"
-                            closeOnTouchOutside={true}
-                            closeOnHardwareBackPress={false}
-                            showCancelButton={true}
-                            showConfirmButton={true}
                             cancelText="No, cancel"
                             confirmText="Yes, delete it"
-                            confirmButtonColor="#67a9ef"
-                            cancelButtonColor="#919ba7"
                             onCancelPressed={() => {
                                 this.hideConfirm();
                             }}
