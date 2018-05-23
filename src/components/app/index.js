@@ -7,6 +7,8 @@ import Home from './home';
 import Profile from './profile';
 import DrawerComponent from './drawer';
 import TabScreen from './tab-screen';
+import UploadScreen from './upload';
+import ConfirmationScreen from './confirm';
 import { DrawerNavigator } from 'react-navigation';
 import { Root } from 'native-base';
 
@@ -20,6 +22,12 @@ const AppStack = DrawerNavigator(
         },
         TabScreen: {
             screen: TabScreen
+        },
+        UploadScreen: {
+            screen: UploadScreen
+        },
+        ConfirmationScreen: {
+            screen: ConfirmationScreen
         }
     }, {
         contentComponent: DrawerComponent, /** This is our custom drawer component */

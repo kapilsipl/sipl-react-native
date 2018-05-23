@@ -17,6 +17,14 @@ export default class Drawer extends Component {
         this.props.navigation.navigate('TabScreen')
     }
 
+    uploadDocument = () => () => {
+        this.props.navigation.navigate('UploadScreen');
+    }
+
+    showConfirmation = () => () => {
+        this.props.navigation.navigate('ConfirmationScreen');
+    }
+
     /**
      * @method onLogout
      * @description Clear AsyncStorage and navigate user to AuthLoading screen
@@ -48,6 +56,12 @@ export default class Drawer extends Component {
                     <List>
                         <ListItem>
                             <Text onPress={this.onPress()}>Tab Screen</Text>
+                        </ListItem>
+                        <ListItem>
+                            <Text onPress={this.uploadDocument()}>Document Upload</Text>
+                        </ListItem>
+                        <ListItem>
+                            <Text onPress={this.showConfirmation()}>Confirmation</Text>
                         </ListItem>
                         <ListItem>
                             <Text onPress={this.onLogout()}>Logout</Text>

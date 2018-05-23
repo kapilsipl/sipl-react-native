@@ -5,7 +5,11 @@
  * To make our style more clear, we can use module prefixes in style name.
  */
 
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform, Dimensions } from 'react-native';
+
+var headerHeight = Platform.OS === 'ios' ? 108 : 100;
+var deviceWidth = (Dimensions.get('window').width);
+var deviceHeight = (Dimensions.get('window').height) - headerHeight;
 
 export default StyleSheet.create({
     container: {
@@ -69,5 +73,27 @@ export default StyleSheet.create({
         fontSize: 13,
         marginLeft: 3,
         color: 'red',
+    },
+    buttonText: {
+        color: 'white'
+    },
+    confirmContainer: {
+        flex: 1,
+        alignItems: 'center',
+        width: deviceWidth,
+        height: deviceHeight,
+        justifyContent: 'center',
+        backgroundColor: '#fff',
+    },
+    button: {
+        margin: 10,
+        paddingHorizontal: 10,
+        paddingVertical: 7,
+        borderRadius: 5,
+        backgroundColor: "#fa6a6d",
+    },
+    text: {
+        color: '#fff',
+        fontSize: 15
     }
 })

@@ -9,7 +9,9 @@
 
  /** Export API */
 export const API = {
-    getPeople: `${BASE_URL}/people/` /** Define even the endpoints */
+    getPeople: `${BASE_URL}/people/`, /** Define even the endpoints */
+    uploadFile : 'http://183.182.84.29/MahycoApi/ImageUpload'
+
 }
 
  /** Export FILE_CONFIG */

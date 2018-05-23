@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styles from '../../../assets/styles';
-import { showToast } from '../../../helper'
+import { Toast } from '../../../helper'
 import { HeaderComponent } from '../../common'
 
 import {
@@ -12,6 +12,17 @@ import {
 } from "native-base";
 
 class Home extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            showToast: false
+        };
+    }
+
+    componentWillUnmount() {
+     /**   Toast.clearToastInstance(); */
+    }
 
     /**
      * @method changeScreen
@@ -26,7 +37,7 @@ class Home extends Component {
      * @description Example for toast
      */
     handleToastButton = () => {
-        showToast('Example toast');
+        Toast.showToast('Example toast', 'success');
     }
 
     /**
@@ -57,9 +68,11 @@ class Home extends Component {
                         </Text>
                         </View>
                     </View>
-                    <Button onPress={this.handleToastButton}>
-                        <Text>Click to show Toast</Text>
-                    </Button>
+                    <View style={styles.textWrap}>
+                        <Button onPress={this.handleToastButton}>
+                            <Text style={styles.buttonText}> Click to show Toast </Text>
+                        </Button>
+                    </View>
                 </Content>
             </Container >
         )
