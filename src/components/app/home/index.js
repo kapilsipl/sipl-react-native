@@ -1,11 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import styles from '../../../assets/styles';
-import { Toast } from '../../../helper'
-import { HeaderComponent } from '../../common'
-
+import { HeaderComponent, ToastComponent } from '../../common';
 import {
     View, Text
-} from 'react-native'
+} from 'react-native';
 
 import {
     Container, Title, Content, Button, Icon, Right, Body, Left, Picker, Form
@@ -16,12 +14,13 @@ class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showToast: false
+            showToast: false,
+            visible: false
         };
     }
 
     componentWillUnmount() {
-     /**   Toast.clearToastInstance(); */
+        /**   Toast.clearToastInstance(); */
     }
 
     /**
@@ -37,7 +36,19 @@ class Home extends Component {
      * @description Example for toast
      */
     handleToastButton = () => {
-        Toast.showToast('Example toast', 'success');
+        this.setState({
+            visible: true
+        });
+    }
+
+    /**
+     * @method hideToast
+     * @description function to hide toast
+     */
+    hideToast = () => {
+        setTimeout(() => this.setState({
+            visible: false
+        }), 2000); /** hide toast after 2s */
     }
 
     /**
@@ -73,8 +84,15 @@ class Home extends Component {
                             <Text style={styles.buttonText}> Click to show Toast </Text>
                         </Button>
                     </View>
+                    <ToastComponent
+                        visible={this.state.visible}
+                        backgroundColor='red'
+                        onShow={this.hideToast}
+                        message="This is a sample toast message!!!"
+                    />
                 </Content>
-            </Container >
+            </Container>
+
         )
     }
 }
