@@ -25,6 +25,10 @@ export default class Drawer extends Component {
         this.props.navigation.navigate('ConfirmationScreen');
     }
 
+    getLocation = () => () => {
+        this.props.navigation.navigate('GeoLocationScreen');
+    }
+
     /**
      * @method onLogout
      * @description Clear AsyncStorage and navigate user to AuthLoading screen
@@ -62,6 +66,9 @@ export default class Drawer extends Component {
                         </ListItem>
                         <ListItem>
                             <Text onPress={this.showConfirmation()}>Confirmation</Text>
+                        </ListItem>
+                        <ListItem>
+                            <Text onPress={this.getLocation()}>Geolocation</Text>
                         </ListItem>
                         <ListItem>
                             <Text onPress={this.onLogout()}>Logout</Text>

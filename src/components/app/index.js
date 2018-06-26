@@ -9,6 +9,7 @@ import DrawerComponent from './drawer';
 import TabScreen from './tab-screen';
 import UploadScreen from './upload';
 import ConfirmationScreen from './confirm';
+import GeoLocationScreen from './geolocation';
 import { DrawerNavigator } from 'react-navigation';
 import { Root } from 'native-base';
 
@@ -28,6 +29,9 @@ const AppStack = DrawerNavigator(
         },
         ConfirmationScreen: {
             screen: ConfirmationScreen
+        },
+        GeoLocationScreen : {
+            screen: GeoLocationScreen
         }
     }, {
         contentComponent: DrawerComponent, /** This is our custom drawer component */
