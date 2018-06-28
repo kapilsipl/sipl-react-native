@@ -64,6 +64,9 @@ export default StyleSheet.create({
     m20: {
         margin: 20
     },
+    m15: {
+        margin: 15
+    },
     body: {
         justifyContent: 'center',
         alignItems: 'center',
@@ -95,5 +98,18 @@ export default StyleSheet.create({
     text: {
         color: '#fff',
         fontSize: 15
+    },
+    fbTextStyle: {
+        color: '#3b5998',
+        fontSize: 17,
+        fontWeight: 'bold',
+    },
+    fbDetailTextStyle: {
+        color: '#3b5998',
+        fontSize: 15
+    },
+    centerContent: {
+        justifyContent: 'center',
+        alignItems: 'center'
     }
 })
